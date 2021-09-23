@@ -1,0 +1,10 @@
+.singleProduct {
+    display: flex;
+    margin-bottom: 10px;
+    margin-right: 4px;
+    border-bottom: 1px solid lightgray;
+}
+
+.add-cart-btn{
+    width: 225px;
+}
