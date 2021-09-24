@@ -2,3 +2,13 @@
     display: grid;
     grid-template-columns: 3fr 1fr;
 }
+.search-container {
+    background-color: rgba(0, 0, 0, 0.877);
+    text-align: center;
+    padding: 10px;
+}
+.search-container input {
+    width: 75%;
+    border-radius: 5px;
+    line-height: 30px;
+}
