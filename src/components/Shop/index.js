@@ -14,7 +14,7 @@ const ShopIndex = () => {
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
-                setDisplayProduct(data)
+                setDisplayProduct(data);
             })
     }, []);
 
