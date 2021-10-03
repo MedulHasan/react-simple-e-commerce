@@ -3,6 +3,7 @@ import Cart from './Cart';
 import Shop from './Shop';
 import './index.css'
 import { addToDb, getStoredCart } from '../../utilities/fakedb';
+import { Link } from 'react-router-dom';
 
 const ShopIndex = () => {
     const [products, setProducts] = useState([]);
@@ -34,7 +35,17 @@ const ShopIndex = () => {
     }, [products])
 
     const handleAddToCart = (product) => {
-        const newcart = [...cart, product];
+        const exists = cart.find(c => c.key === product.key);
+        let newcart = [];
+        if (exists) {
+            const rest = cart.filter(c => c.key !== product.key);
+            exists.quantity = exists.quantity + 1;
+            newcart = [...rest, product]
+        } else {
+            product.quantity = 1;
+            newcart = [...cart, product]
+        }
+        // const newcart = [...cart, product];
         setCart(newcart);
         addToDb(product.key);
     }
@@ -52,7 +63,11 @@ const ShopIndex = () => {
             </div>
             <div className="shop-index">
                 <Shop products={displayProduct} handleAddToCart={handleAddToCart} />
-                <Cart cart={cart} />
+                <Cart cart={cart}>
+                    <Link to="/review">
+                        <button className="btn btn-warning">Review Your Order</button>
+                    </Link>
+                </Cart>
             </div>
         </>
     );

@@ -20,6 +20,7 @@ const useCart = (products) => {
             setCart(storedCart)
         }
     }, [products]);
+
     return [cart, setCart];
 }
 
