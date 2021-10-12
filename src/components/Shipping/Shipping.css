@@ -1,0 +1,13 @@
+.shippng-form {
+    margin: 20px 100px;
+}
+.shippng-form input {
+    display: block;
+    margin-top: 15px;
+    border-radius: 5px;
+    width: 300px;
+    border: 1px solid;
+}
+.error {
+    color: red;
+}
